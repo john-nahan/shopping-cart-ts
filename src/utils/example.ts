@@ -22,8 +22,10 @@ const product: Product[] = [{
 
 
 
-function calcTotal(products: Product[]): number {
-    return products.reduce((acc, product) => {return acc + product.price}, 0);
+const calcTotal = (products: Product[]): number => {
+    return products.reduce((acc, product) => {
+      return acc + product.price;
+    }, 0);
 };
 
-console.log(calcTotal(product));
+export default calcTotal;
