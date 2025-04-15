@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Product, { ProductProps } from "./components/Product";
 import User from "./components/User";
 
 function App() {
@@ -31,10 +32,38 @@ function App() {
   //   return cart;
   // };
 
+  const productList: ProductProps[] = [
+    {
+      id: "1",
+      category: "tablet",
+      name: "Ipad pro 11 inch",
+      price: 450,
+    },
+    {
+      id: "2",
+      category: "phone",
+      name: "iphone",
+      price: 620,
+    },
+    {
+      id: "3",
+      category: "computer",
+      name: "Macbook pro M4 ",
+      price: 2100,
+    },
+  ];
+
   return (
-    <>
-      <Navbar />
-    </>
+    <div>
+      <div className="grid grid-cols-3 gap-4 mt-3">
+        {
+          // products.map(product=>)
+          productList.map((product) => {
+            return <Product key={product.id} {...product} />;
+          })
+        }
+      </div>
+    </div>
   );
 }
 
